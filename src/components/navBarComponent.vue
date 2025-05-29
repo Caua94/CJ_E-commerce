@@ -1,14 +1,14 @@
 <template>
-  <div class="fixed top-0 w-full bg-white text-gray-800 z-50 shadow-md font-serif">
+  <div class="fixed top-0 w-screen bg-[#F1F0E8] text-[#3E4A4F] z-50 shadow-md font-serif">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 h-24 flex items-end py-4 justify-between ">
 
       <h1 class="text-3xl font-extrabold">BuyHub</h1>
 
-      <nav class="ml-8 md:flex-1 flex-1 text-xl lg:text-xl text-gray-700 font-semibold">
+      <nav class="ml-8 md:flex-1 flex-1 text-xl lg:text-xl ">
         <ul class="flex gap-6 lg:gap-8 ">
-          <li class="transition duration-300 ease-in-out hover:scale-105 hover:text-stone-300"><router-link to="/">Home</router-link></li>
-          <li class="transition duration-300 ease-in-out hover:scale-105 hover:text-stone-300"><router-link to="/">Products</router-link></li>
-          <li class="transition duration-300 ease-in-out hover:scale-105 hover:text-stone-300"><router-link to="/">About BuyHub</router-link></li>
+          <li class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]"><router-link to="/">Home</router-link></li>
+          <li class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]"><router-link to="/">Products</router-link></li>
+          <li class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]"><router-link to="/">About BuyHub</router-link></li>
         </ul>
       </nav>
 
