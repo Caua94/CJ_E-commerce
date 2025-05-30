@@ -2,7 +2,7 @@
     <div
       v-for="prod in products"
       :key="prod.id"
-      class="p-4 text-black shadow-md bg-red-100 hover:bg-gray-200 w-[250px] h-[400px] mx-auto flex flex-col items-center justify-center font-serif"
+      class="transition-all duration-500 ease-in-out p-4 text-[#3E4A4F] shadow-md cursor-pointer bg-[#F1F0E8] hover:bg-[#D6D4CB] w-[400px] h-[400px] mx-auto flex flex-col items-center justify-center font-serif rounded-[100px]"
     >
       <img
         v-if="prod.images && prod.images.length"
@@ -10,7 +10,7 @@
         :alt="prod.category"
         class="mx-auto mb-4 h-40 object-contain"
       />
-      <h2 class="text-2xl capitalize text-center">{{ prod.category || 'Carregando...' }}</h2>
+      <h2 class="text-2xl pt-16 capitalize text-center font-bold">{{ prod.category || 'Carregando...' }}</h2>
     </div>
 </template>
 
