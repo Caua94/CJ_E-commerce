@@ -8,7 +8,7 @@
   </div>
 
 
-  <div class="grid gap-8 px-8 py-12 justify-center bg-[#D6D4CB]">
+  <div class="grid  gap-8 px-8 py-12 justify-center bg-[#D6D4CB]">
 
     <div>
       <h3 class="font-bold border-b border-black inline-block mb-2">Products</h3>
