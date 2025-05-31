@@ -2,7 +2,8 @@
     <div
       v-for="prod in products"
       :key="prod.id"
-      class="transition-all duration-500 ease-in-out p-4 text-[#3E4A4F] shadow-md cursor-pointer bg-[#F1F0E8] hover:bg-[#D6D4CB] w-[400px] h-[400px] mx-auto flex flex-col items-center justify-center font-serif rounded-[100px]"
+      class="transition-all duration-500 ease-in-out p-4 text-[#3E4A4F] shadow-md cursor-pointer bg-[#F1F0E8] hover:bg-[#D6D4CB] w-[400px] h-[400px] mx-auto flex flex-col items-center justify-center rounded-[100px]"
+      :style="{ fontFamily: 'var(--font-mont)' }"
     >
       <img
         v-if="prod.images && prod.images.length"

@@ -1,5 +1,5 @@
 <template>
-<footer class="bg-[#F1F0E8] text-sm text-[#3E4A4F] font-sans w-screen shadow-2xl">
+<footer class="bg-[#F1F0E8] text-sm text-[#3E4A4F]  w-screen shadow-2xl"  :style="{ fontFamily: 'var(--font-mont)' }">
   <!-- Newsletter Section -->
   <div class="text-center py-10 px-4 border-b border-[#6B8E99]">
     <h2 class="text-xl font-semibold mb-2">BuyHub</h2>
@@ -23,7 +23,7 @@
 
       <h3 class="font-bold border-b border-black inline-block mb-2">Contact</h3>
       <ul class="space-y-1 text-[#3E4A4F]">
-        <li>Contact BuyHub</li>
+        <router-link to="/contact">Contact BuyHub</router-link>
       </ul>
     </div>
   </div>

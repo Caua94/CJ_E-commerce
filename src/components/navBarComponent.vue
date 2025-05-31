@@ -1,8 +1,8 @@
 <template>
-  <div class="top-0 w-screen bg-[#F1F0E8] text-[#3E4A4F] z-50 shadow-3xl font-serif">
+  <div class="top-0 w-screen bg-[#F1F0E8] text-[#3E4A4F] z-50 shadow-3xl "  :style="{ fontFamily: 'var(--font-mont)' }">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 h-24 flex items-end py-4 justify-between ">
 
-      <h1 class="text-3xl font-extrabold">BuyHub</h1>
+      <router-link to="/" class="text-3xl font-extrabold">BuyHub</router-link>
 
       <nav class="ml-8 md:flex-1 flex text-xl lg:text-xl space-x-8">
         <div class="group inline-block">

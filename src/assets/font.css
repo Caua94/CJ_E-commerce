@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Dianora';
+  src: url('@/assets/fonts/Dianora.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mont';
+  src: url('@/assets/fonts/Montserrat.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --font-dianora: 'Dianora', sans-serif;
+  --font-mont: 'Mont', sans-serif;
+}
+
+
+
