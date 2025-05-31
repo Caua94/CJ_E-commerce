@@ -1,5 +1,5 @@
 <template>
-  <div class="top-0 w-screen bg-[#F1F0E8] text-[#3E4A4F] z-50 shadow-3xl "  :style="{ fontFamily: 'var(--font-mont)' }">
+  <div class="top-0 w-screen bg-[#F1F0E8] text-[#3E4A4F] z-50 shadow-3xl " :style="{ fontFamily: 'var(--font-mont)' }">
     <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 h-24 flex items-end py-4 justify-between ">
 
       <router-link to="/" class="text-3xl font-extrabold">BuyHub</router-link>
@@ -14,30 +14,10 @@
             <div class="ml-24 mx-auto flex flex-col space-y-5 pt-6 text-lg">
               <h1 class="opacity-75">Categories</h1>
               <div class="grid grid-flow-col grid-rows-4 gap-4 space-x-24 ">
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
+                <router-link v-for="category in categories" :key="category" :to="`/product?category=${category}`"
+                  class="hover:text-[#6B8E99] capitalize">
+                  {{ category.replace(' ') }}
+                </router-link>
 
               </div>
             </div>
@@ -94,6 +74,17 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 
+const categories = ref([])
 
+onMounted(async () => {
+  try {
+    const res = await fetch('https://dummyjson.com/products/category-list')
+    const data = await res.json()
+    categories.value = data
+  } catch (error) {
+    console.error('Erro ao carregar categorias:', error)
+  }
+})
 </script>
