@@ -2,7 +2,7 @@
   <main
     class="relative shadow-4xl group w-screen h-[500px] hover:bg-black transition duration-700 ease-in-out shadow-xl flex flex-col items-center justify-center  bg-[url(../assets/img/bg.jpg)] bg-cover bg-center bg-no-repeat " :style="{ fontFamily: 'var(--font-mont)' }">
     <div
-      class="absolute inset-0 rounded-2xl bg-black opacity-0 group-hover:opacity-50 transition duration-700 ease-in-out z-0">
+      class="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition duration-700 ease-in-out z-0">
     </div>
 
     <div class="relative z-10 flex flex-col items-center justify-center text-center">
@@ -13,7 +13,7 @@
         <p class="text-2xl text-white font-extralight">diversity</p>
         <div
           class="opacity-0 scale-80 group-hover:opacity-100 group-hover:scale-100 transition-all duration-1000 ease-in-out">
-          <router-link to="/allProducts">
+          <router-link to="/allProduct">
             <button class="cursor-pointer bg-[white] hover:bg-gray-200 text-black w-[300px] mt-4 p-2 rounded-sm">View
             products</button>
           </router-link>

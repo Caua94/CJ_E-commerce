@@ -6,11 +6,11 @@
 
       <nav class="ml-8 md:flex-1 flex text-xl lg:text-xl space-x-8">
         <div class="group inline-block">
-          <router-link to="/" class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]">
+          <router-link to="/allProduct" class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]">
             Products
           </router-link>
           <div
-            class="absolute left-0 mt-4 w-screen h-[300px] bg-[#F1F0E8] text-[#3E4A4F] shadow-lg flex  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-t">
+            class="absolute left-0 mt-4 w-screen h-[350px] bg-[#F1F0E8] text-[#3E4A4F] shadow-lg flex  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border-t">
             <div class="ml-24 mx-auto flex flex-col space-y-5 pt-6 text-lg">
               <h1 class="opacity-75">Categories</h1>
               <div class="grid grid-flow-col grid-rows-4 gap-4 space-x-24 ">
@@ -27,7 +27,7 @@
 
         </div>
         <div class="group inline-block">
-          <router-link to="/" class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]">
+          <router-link to="/enterprise" class="transition duration-300 ease-in-out hover:scale-105 hover:text-[#6B8E99]">
             About BuyHub
           </router-link>
           <div
@@ -36,8 +36,9 @@
               <h1 class="opacity-75">Topics</h1>
               <div class="grid grid-flow-col grid-rows-4 gap-4 space-x-24">
                 <router-link class="hover:text-[#6B8E99]" to="/contact">Contact</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
-                <router-link class="hover:text-[#6B8E99]" to="">Clocks</router-link>
+                <router-link class="hover:text-[#6B8E99]" to="/enterprise">Enterprise</router-link>
+              
+
 
 
               </div>
