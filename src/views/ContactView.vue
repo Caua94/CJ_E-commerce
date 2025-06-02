@@ -8,7 +8,7 @@
 
 
 
-    <div class="h-[500px] bg-[#F1F0E8] flex justify-center items-center " >
+    <div class="h-[500px]  flex justify-center items-center " >
       <div class="rounded-2xl pt-8 flex justify-center items-center  gap-12 w-full">
         <div>
           <h1 class="text-4xl font-semibold mb-4">Contact BuyHub</h1>

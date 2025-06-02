@@ -46,16 +46,28 @@
         <input v-model="searchQuery" type="text" placeholder="Search products..."
           class="border border-gray-400 rounded-lg px-4 py-1 w-[250px]" />
       </div>
+
+      <div class="flex ">
+        <label for="sort" class="mr-4 text-lg opacity-75">Ordenar por:</label>
+        <select id="sort" v-model="sortOption" class="border rounded-lg px-2 py-1 text-[#3E4A4F]">
+          <option value="">Padrão</option>
+          <option value="title-asc">Nome A-Z</option>
+          <option value="title-desc">Nome Z-A</option>
+          <option value="price-asc">Menor preço</option>
+          <option value="price-desc">Maior preço</option>
+        </select>
+      </div>
+
     </div>
 
     <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 space-y-2 pl-24 pr-24 pb-4 ">
-      <div v-for="prod in products" :key="prod.id"
+      <div v-for="prod in sortedProducts" :key="prod.id"
         class="p-4 text-[#3E4A4F] w-[340px] h-[400px] mx-auto flex flex-col items-center justify-center border pl-6 pr-6">
         <img v-if="prod.images && prod.images.length" :src="prod.images[0]" :alt="prod.title"
           class="mx-auto mb-4 h-40 object-contain" />
         <h2 class="text-xl text-center font-bold">{{ prod.title }}</h2>
         <p class="text-sm text-center mt-2 capitalize">{{ prod.category }}</p>
-        <p class="text-lg font-semibold mt-1 text-green-600">R$ {{ prod.price }}</p>
+        <p class="text-lg font-semibold mt-1 text-green-600">$ {{ prod.price }}</p>
       </div>
     </div>
 
@@ -70,7 +82,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch,computed } from 'vue'
 
 const products = ref([])
 const categories = ref([])
@@ -80,7 +92,7 @@ let page = 1
 const limit = 20
 let debounceTimeout = null
 
-// Buscar todos os produtos (paginação padrão)
+
 async function fetchAllProducts() {
   const skip = (page - 1) * limit
   const res = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
@@ -88,7 +100,7 @@ async function fetchAllProducts() {
   products.value = data.products
 }
 
-// Buscar produtos via search API
+
 async function searchProducts(query) {
   if (query.trim() === '') {
     fetchAllProducts()
@@ -104,7 +116,7 @@ async function searchProducts(query) {
   }
 }
 
-// Paginação
+
 function next() {
   page++
   fetchAllProducts()
@@ -117,12 +129,11 @@ function prev() {
   }
 }
 
-// Watch com debounce
 watch(searchQuery, (newQuery) => {
   clearTimeout(debounceTimeout)
   debounceTimeout = setTimeout(() => {
     searchProducts(newQuery)
-  }, 500) // espera 500ms após parar de digitar
+  }, 500)
 })
 
 onMounted(async () => {
@@ -134,6 +145,25 @@ onMounted(async () => {
     categories.value = data
   } catch (error) {
     console.error('Erro ao carregar categorias:', error)
+  }
+})
+
+const sortOption = ref('') // opções: 'title-asc', 'title-desc', 'price-asc', 'price-desc'
+
+const sortedProducts = computed(() => {
+  const sorted = [...products.value]
+
+  switch (sortOption.value) {
+    case 'title-asc':
+      return sorted.sort((a, b) => a.title.localeCompare(b.title))
+    case 'title-desc':
+      return sorted.sort((a, b) => b.title.localeCompare(a.title))
+    case 'price-asc':
+      return sorted.sort((a, b) => a.price - b.price)
+    case 'price-desc':
+      return sorted.sort((a, b) => b.price - a.price)
+    default:
+      return sorted
   }
 })
 

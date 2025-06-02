@@ -37,7 +37,7 @@
               <div class="grid grid-flow-col grid-rows-4 gap-4 space-x-24">
                 <router-link class="hover:text-[#6B8E99]" to="/contact">Contact</router-link>
                 <router-link class="hover:text-[#6B8E99]" to="/enterprise">Enterprise</router-link>
-              
+
 
 
 
