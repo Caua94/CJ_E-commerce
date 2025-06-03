@@ -20,14 +20,14 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import axios from 'axios'
 
 const products = ref([]);
 
 async function fetchProductById(id) {
   try {
-    const res = await fetch(`https://dummyjson.com/products/${id}`);
-    const data = await res.json();
-    return data;
+    const res = await axios.get(`https://dummyjson.com/products/${id}`);
+    return res.data;
   } catch (err) {
     console.error(`Erro ao buscar produto id=${id}:`, err);
   }
@@ -37,9 +37,11 @@ onMounted(async () => {
   const ids = [1, 6, 11, 16, 43, 48, 78, 83, 88, 93, 99, 113, 118, 121, 137, 154, 159, 162, 167, 172, 177, 182, 185, 190];
   const produtos = [];
 
-  for (const id of ids) {
-    const product = await fetchProductById(id);
-    if (product) produtos.push(product);
+  for (const id of ids) { // Para cada valor dentro do array ids, pegue esse valor e chame de id
+    const produto = await fetchProductById(id)
+    if (produto) {
+      produtos.push(produto) // add na lista produtos
+    }
   }
 
   products.value = produtos;

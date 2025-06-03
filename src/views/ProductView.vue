@@ -67,6 +67,7 @@
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
+import axios from "axios";
 
 const route = useRoute();
 const products = ref([]);
@@ -74,9 +75,8 @@ const category = ref(route.query.category);
 
 async function fetchProductsByCategory(categoryName) {
 
-  const res = await fetch(`https://dummyjson.com/products/category/${categoryName}`);
-  const data = await res.json();
-  products.value = data.products;
+  const res = await axios.get(`https://dummyjson.com/products/category/${categoryName}`);
+  products.value = res.data.products;
 
 }
 
@@ -97,9 +97,8 @@ const categories = ref([])
 
 onMounted(async () => {
   try {
-    const res = await fetch('https://dummyjson.com/products/category-list')
-    const data = await res.json()
-    categories.value = data
+    const res = await axios.get('https://dummyjson.com/products/category-list')
+    categories.value = res.data
   } catch (error) {
     console.error('Erro ao carregar categorias:', error)
   }

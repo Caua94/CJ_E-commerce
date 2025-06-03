@@ -83,6 +83,7 @@
 
 <script setup>
 import { ref, onMounted, watch,computed } from 'vue'
+import axios from "axios"
 
 const products = ref([])
 const categories = ref([])
@@ -95,9 +96,9 @@ let debounceTimeout = null
 
 async function fetchAllProducts() {
   const skip = (page - 1) * limit
-  const res = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
-  const data = await res.json()
-  products.value = data.products
+  const response = await axios.get(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
+
+  products.value = response.data.products
 }
 
 
@@ -108,9 +109,9 @@ async function searchProducts(query) {
   }
 
   try {
-    const res = await fetch(`https://dummyjson.com/products/search?q=${encodeURIComponent(query)}`)
-    const data = await res.json()
-    products.value = data.products
+    const response = await axios.get(`https://dummyjson.com/products/search?q=${encodeURIComponent(query)}`)
+
+    products.value = response.data.products
   } catch (err) {
     console.error('Erro na busca:', err)
   }
@@ -140,9 +141,8 @@ onMounted(async () => {
   fetchAllProducts()
 
   try {
-    const res = await fetch('https://dummyjson.com/products/category-list')
-    const data = await res.json()
-    categories.value = data
+    const response = await axios.get('https://dummyjson.com/products/category-list')
+    categories.value = response.data
   } catch (error) {
     console.error('Erro ao carregar categorias:', error)
   }
