@@ -14,7 +14,7 @@
         <h3 class="font-bold border-b border-black inline-block mb-2">Products</h3>
         <ul class="space-y-1">
           <li>
-            <router-link to="/allProduct">All Products</router-link>
+            <router-link to="/product">All Products</router-link>
           </li>
         </ul>
       </div>

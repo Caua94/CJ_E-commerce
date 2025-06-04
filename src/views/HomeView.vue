@@ -13,7 +13,7 @@
         <p class="text-2xl text-white font-extralight">diversity</p>
         <div
           class="opacity-0 scale-80 group-hover:opacity-100 group-hover:scale-100 transition-all duration-1000 ease-in-out">
-          <router-link to="/allProduct">
+          <router-link to="/product">
             <button class="cursor-pointer bg-[white] hover:bg-gray-200 text-black w-[300px] mt-4 p-2 rounded-sm">View
             products</button>
           </router-link>
