@@ -1,34 +1,25 @@
 <template>
-  <div class="h-screen bg-[white] text-[#3E4A4F] content-center" :style="{ fontFamily: 'var(--font-mont)' }">
-
-    <!-- Verifica se o produto foi carregado -->
-    <div v-if="product" class="max-w-6xl mx-auto rounded-xl p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-
-      <!-- Imagem do produto -->
+  <div class="min-h-screen bg-white text-[#3E4A4F] content-center px-4 py-8" :style="{ fontFamily: 'var(--font-mont)' }">
+    <div v-if="product" class="max-w-6xl mx-auto rounded-xl p-4 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
       <img
         :src="product.images?.[0]"
         :alt="product.title"
-        class="w-full object-contain max-h-[800px] rounded-xl border"
+        class="w-full object-contain max-h-[400px] md:max-h-[800px] rounded-xl border"
       />
-
-      <!-- Informações do produto -->
       <div>
-        <h1 class="text-4xl font-bold mb-2">{{ product.title }}</h1>
-        <p class="text-lg capitalize mb-1 text-gray-600">{{ product.category }}</p>
-        <p class="text-lg capitalize mb-1 text-gray-600">{{ product.brand }}</p>
-        <p class="text-2xl text-green-700 font-semibold mb-4">$ {{ product.price }}</p>
-        <p class="text-2xl text-gray-800 pt-12 ">{{ product.description }}</p>
-        <p class="text-sm text-gray-500">Estoque: {{ product.stock }}</p>
-        <p class="text-sm ">Avaliação: {{ product.rating }} </p>
-
-        <!-- Botão para adicionar ao carrinho -->
-        <button class="text-2xl text-white bg-gray-600 hover:bg-gray-500 rounded-2xl p-2 mt-20">
+        <h1 class="text-2xl md:text-4xl font-bold mb-2">{{ product.title }}</h1>
+        <p class="text-base md:text-lg capitalize mb-1 text-gray-600">{{ product.category }}</p>
+        <p class="text-base md:text-lg capitalize mb-1 text-gray-600">{{ product.brand }}</p>
+        <p class="text-xl md:text-2xl text-green-700 font-semibold mb-4">$ {{ product.price }}</p>
+        <p class="text-base md:text-2xl text-gray-800 pt-6 md:pt-12">{{ product.description }}</p>
+        <p class="text-sm text-gray-500 mt-4">Estoque: {{ product.stock }}</p>
+        <p class="text-sm">Avaliação: {{ product.rating }}</p>
+        <button class="text-base md:text-2xl text-white bg-gray-600 hover:bg-gray-500 rounded-2xl p-2 mt-8 md:mt-20">
           Add to cart
         </button>
       </div>
     </div>
 
-    <!-- Mensagem exibida enquanto o produto está sendo carregado -->
     <div v-else class="text-center text-xl mt-12">
       Carregando produto...
     </div>

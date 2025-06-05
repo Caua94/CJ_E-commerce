@@ -1,35 +1,69 @@
-# CJe-commerce
+# BuyHub
 
-This template should help get you started developing with Vue 3 in Vite.
+## Descrição do Projeto
 
-## Recommended IDE Setup
+Este projeto é uma aplicação web desenvolvida com **Vue.js 3**, que simula uma loja virtual e consome dados de produtos em tempo real através da API pública do DummyJSON:  
+[https://dummyjson.com/docs/products](https://dummyjson.com/docs/products)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Funcionalidades implementadas:
 
-## Customize configuration
+- NavBar:
+![NavBar](./src/assets/screenshot/Listagem%20de%20Categorias.png)
+- Listagem de produtos com dados da API:
+![Listagem de Produtos](./src/assets/screenshot/Listagem%20de%20Produtos.png)
+- Visualização de detalhes de produtos:
+![Detalhes do Produto](./src/assets/screenshot/Detalhe%20do%20Porduto.png)
+- Filtro por categorias: <br>
+![Filtro de Categorias](./src/assets/screenshot/Filtro%20de%20Categorias.png)
+- Busca por ordenação: <br>
+![Ordenação](./src/assets/screenshot/Ordenação.png)
+- Navegação entre categorias: <br>
+![Categorias](./src/assets/screenshot/Categorias.png)
+- Contato:
+![Categorias](./src/assets/screenshot/Contato.png)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+---
 
-## Project Setup
+## Tecnologias Utilizadas
 
+- Vue.js 3
+- Vite
+- Axios
+- TailwindCSS
+
+---
+
+## Como rodar o projeto localmente
+
+### Pré-requisitos
+
+- Node.js
+- Git
+
+### Instalação
+
+Clone o repositório:
+
+```sh
+git clone https://github.com/Caua94/CJ_E-commerce
+
+cd CJ_E-commerce
+```
+Instale as dependências:
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
+Inicie o servidor:
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Demonstração em Vídeo
 
-```sh
-npm run build
-```
+https://www.youtube.com/watch?v=Gil7wdDlQG8
 
-### Lint with [ESLint](https://eslint.org/)
+---
 
-```sh
-npm run lint
-```
+Feito por: <br>
+Cauã Reginato RA: 1988923  <br>
+Jhonata Gabriel Canevare RA: 1993374
